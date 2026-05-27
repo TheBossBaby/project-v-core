@@ -13,15 +13,19 @@ namespace projectv::core
         Critical
     };
 
-    class Logger
+    class ILogger
     {
     public:
-        static void log(LogLevel level, std::string_view message);
+        virtual ~ILogger() = default;
 
-        static void trace(std::string_view message);
-        static void info(std::string_view message);
-        static void warn(std::string_view message);
-        static void error(std::string_view message);
-        static void critical(std::string_view message);
+        // Core function: log a message with a level
+        virtual void log(LogLevel level, std::string_view message) = 0;
+
+        // Optional convenience wrappers
+        virtual void trace(std::string_view message)  = 0;
+        virtual void info(std::string_view message)   = 0;
+        virtual void warn(std::string_view message)   = 0;
+        virtual void error(std::string_view message)  = 0;
+        virtual void critical(std::string_view message) = 0;
     };
 }

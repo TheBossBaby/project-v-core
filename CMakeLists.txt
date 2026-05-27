@@ -25,7 +25,7 @@ target_sources(engine_core
         include/projectV/core/mesh.hpp
         include/projectV/core/meshLoader.hpp
     PRIVATE
-        src/core/logger.cpp
+        src/core/core.cpp
 )
 
 # Public headers
