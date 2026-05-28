@@ -20,10 +20,14 @@ add_library(engine_core STATIC)
 target_sources(engine_core
     PUBLIC
         include/projectV/core/logger.hpp
+
         include/projectV/core/renderer.hpp
         include/projectV/core/raytracer.hpp
+
         include/projectV/core/mesh.hpp
         include/projectV/core/meshLoader.hpp
+        include/projectV/core/texture.hpp
+        include/projectV/core/textureLoader.hpp
     PRIVATE
         src/core/core.cpp
 )
