@@ -29,7 +29,9 @@ target_sources(engine_core
         include/projectV/core/texture.hpp
         include/projectV/core/textureLoader.hpp
         include/projectV/core/shader.hpp
-        include/projectV/core/shaderLoader.hpp        
+        include/projectV/core/shaderLoader.hpp
+        
+        include/projectV/core/window.hpp
     PRIVATE
         src/core/core.cpp
 )
