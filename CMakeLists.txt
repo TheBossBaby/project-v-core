@@ -32,6 +32,7 @@ target_sources(engine_core
         include/projectV/core/shaderLoader.hpp
         
         include/projectV/core/window.hpp
+        include/projectV/core/application.hpp
     PRIVATE
         src/core/core.cpp
 )
