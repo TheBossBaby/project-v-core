@@ -3,11 +3,11 @@ PROJECT_BRIEF          = "Core interfaces and abstractions"
 
 OUTPUT_DIRECTORY       = docs
 
-INPUT                  = include src
+INPUT                  = include/projectV
 
 RECURSIVE              = YES
 
-FILE_PATTERNS          = *.h *.hpp *.cpp
+FILE_PATTERNS          = *.hpp
 
 EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = NO
@@ -17,13 +17,9 @@ GENERATE_HTML          = YES
 GENERATE_LATEX         = NO
 
 GENERATE_TREEVIEW      = YES
-
 SOURCE_BROWSER         = YES
 
 HAVE_DOT               = YES
-CALL_GRAPH             = YES
-CALLER_GRAPH           = YES
-CLASS_DIAGRAMS         = YES
 
 WARN_IF_UNDOCUMENTED   = YES
 WARN_IF_DOC_ERROR      = YES

@@ -3,7 +3,6 @@ name: Doxygen
 on:
   push:
     branches:
-      - develop
       - main
 
 permissions:
@@ -25,6 +24,9 @@ jobs:
 
       - name: Generate Documentation
         run: doxygen Doxyfile
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
