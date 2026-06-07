@@ -26,6 +26,7 @@ target_sources(engine_core
 
         include/projectV/core/mesh.hpp
         include/projectV/core/meshLoader.hpp
+        include/projectV/core/meshHandle.hpp
         include/projectV/core/texture.hpp
         include/projectV/core/textureLoader.hpp
         include/projectV/core/shader.hpp
