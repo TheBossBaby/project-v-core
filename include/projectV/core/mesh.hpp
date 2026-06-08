@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <vector>
 
+#include <projectV/core/math/math.hpp>
 namespace projectv::core
 {
     /**
@@ -22,14 +23,14 @@ namespace projectv::core
          *
          * Components are ordered as X, Y, Z.
          */
-        float position[3];
+        math::Vector3 position;
 
         /**
          * @brief Vertex normal.
          *
          * Components are ordered as X, Y, Z.
          */
-        float normal[3];
+        math::Vector3 normal;
 
         /**
          * @brief Vertex color.
@@ -37,14 +38,14 @@ namespace projectv::core
          * Components are ordered as R, G, B, A and are
          * expected to be in the range [0.0, 1.0].
          */
-        float color[4];
+        math::Vector4 color;
 
         /**
          * @brief Texture coordinates.
          *
          * Components are ordered as U, V.
          */
-        float uv[2];
+        math::Vector2 uv;
     };
 
     /**
