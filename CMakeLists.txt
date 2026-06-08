@@ -13,8 +13,6 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_subdirectory(external/glm)
-
 # engine_core library
 add_library(engine_core STATIC)
 
@@ -46,9 +44,8 @@ target_sources(engine_core
 target_include_directories(engine_core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/external/glm
 )
-
-target_link_libraries(engine_core PUBLIC glm::glm-header-only)
 
 # Basic compile definitions / features (extend later as needed)
 target_compile_features(engine_core PUBLIC cxx_std_20)
