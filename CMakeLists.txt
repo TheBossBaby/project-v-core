@@ -36,7 +36,7 @@ target_sources(engine_core
         include/projectV/core/window.hpp
         include/projectV/core/application.hpp
 
-        include/projectV/core/math/transform.hpp
+        include/projectV/core/transform.hpp
 
         include/projectV/core/math/math.hpp
     PRIVATE
