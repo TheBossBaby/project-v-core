@@ -21,6 +21,6 @@ namespace projectv::core
 
         uint32_t index = InvalidIndex;
 
-        bool isValid() const { return index != InvalidIndex; }
+        [[nodiscard]] bool isValid() const { return index != InvalidIndex; }
     };
 }

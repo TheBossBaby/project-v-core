@@ -31,9 +31,12 @@ target_sources(engine_core
         include/projectV/core/textureLoader.hpp
         include/projectV/core/shader.hpp
         include/projectV/core/shaderLoader.hpp
-        
+        include/projectV/core/shaderHandle.hpp
+
         include/projectV/core/window.hpp
         include/projectV/core/application.hpp
+
+        include/projectV/core/math/transform.hpp
 
         include/projectV/core/math/math.hpp
     PRIVATE
