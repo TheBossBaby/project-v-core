@@ -3,6 +3,7 @@
 #include "projectv/core/shader.hpp"
 
 #include <optional>
+#include <string>
 
 namespace projectv::core
 {
@@ -12,9 +13,19 @@ namespace projectv::core
     struct ShaderLoadParams
     {
         /**
-         * @brief Source files used to create the shader.
+         * @brief Path of the source asset on disk, for debugging/logging.
          */
-        ShaderSourceDesc source;
+        std::string path;
+
+        /**
+         * @brief Shader stages associated with this shader.
+         */
+        ShaderStage stage;
+
+        /**
+         * @brief Optional debug name used in logs and tools.
+         */
+        std::string debugName = {};
 
         /**
          * @brief Indicates whether debug information should be generated.
