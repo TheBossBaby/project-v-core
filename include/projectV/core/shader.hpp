@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <string_view>
+#include <vector>
 
 namespace projectv::core
 {
@@ -10,37 +11,19 @@ namespace projectv::core
      */
     enum class ShaderStage : std::uint32_t
     {
-        /**
-         * @brief Vertex shader stage.
-         */
-        Vertex = 1 << 0,
-
-        /**
-         * @brief Fragment shader stage.
-         */
-        Fragment = 1 << 1,
+        None        = 0,
+        Vertex      = 1u << 0,
+        Fragment    = 1u << 1,
+        Geometry    = 1u << 2,
+        TessControl = 1u << 3,
+        TessEval    = 1u << 4,
+        Compute     = 1u << 5
     };
 
     /**
      * @brief Unique identifier for a shader resource.
      */
     using ShaderId = std::uint32_t;
-
-    /**
-     * @brief Describes the source files used to create a shader.
-     */
-    struct ShaderSourceDesc
-    {
-        /**
-         * @brief Path to the vertex shader source file.
-         */
-        std::string_view vertexPath;
-
-        /**
-         * @brief Path to the fragment shader source file.
-         */
-        std::string_view fragmentPath;
-    };
 
     /**
      * @brief Represents a shader resource.
@@ -53,13 +36,23 @@ namespace projectv::core
         ShaderId id = 0;
 
         /**
-         * @brief Source files used to create the shader.
+         * @brief Path of the source asset on disk, for debugging/logging.
          */
-        ShaderSourceDesc sourceDesc{};
+        std::string_view path;
+
+        /**
+         * @brief Optional debug name used in logs and tools.
+         */
+        std::string_view debugName;
 
         /**
          * @brief Shader stages associated with this shader.
          */
-        ShaderStage stages = ShaderStage::Vertex | ShaderStage::Fragment;
+        ShaderStage stage = ShaderStage::None;
+
+        /**
+         * @brief Raw shader data.
+         */
+        std::vector<std::uint8_t> data;
     };
 }
