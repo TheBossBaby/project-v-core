@@ -3,7 +3,7 @@
 #include "projectV/core/mesh.hpp"
 
 #include <optional>
-#include <string_view>
+#include <string>
 
 namespace projectv::core
 {
@@ -15,7 +15,7 @@ namespace projectv::core
         /**
          * @brief Path to the mesh asset.
          */
-        std::string_view path;
+        std::string path;
 
         /**
          * @brief Indicates whether texture coordinates should be vertically flipped.
