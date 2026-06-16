@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cstdint>
-#include <string_view>
+#include <string>
 #include <vector>
 
 namespace projectv::core
@@ -38,12 +38,12 @@ namespace projectv::core
         /**
          * @brief Path of the source asset on disk, for debugging/logging.
          */
-        std::string_view path;
+        std::string path;
 
         /**
          * @brief Optional debug name used in logs and tools.
          */
-        std::string_view debugName;
+        std::string debugName;
 
         /**
          * @brief Shader stages associated with this shader.
