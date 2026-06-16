@@ -1,20 +1,34 @@
-name: Build (develop)
+name: Build
 
 on:
   push:
     branches:
       - develop
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Configure CMake
         run: cmake -S . -B build
 
       - name: Build
         run: cmake --build build --config Debug
+
+      - name: Dispatch to engine
+        if: success()
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.REPO_ENGINE_PAT }}
+          repository: TheBossBaby/project-v-engine
+          event-type: core-updated
+          client-payload: >-
+            {
+              "target_branch": "${{ github.ref_name }}",
+              "source_branch": "${{ github.ref_name }}",
+              "source_sha": "${{ github.sha }}"
+            }
