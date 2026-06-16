@@ -21,9 +21,9 @@ jobs:
 
       - name: Dispatch to engine
         if: success()
-        uses: actions/github-script@v7
+        uses: peter-evans/repository-dispatch@v4
         with:
-          github-token: ${{ secrets.REPO_ENGINE_PAT }}
+          token: ${{ secrets.REPO_ENGINE_PAT }}
           repository: TheBossBaby/project-v-engine
           event-type: core-updated
           client-payload: >-
