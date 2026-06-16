@@ -21,7 +21,7 @@ jobs:
 
       - name: Dispatch to engine
         if: success()
-        uses: peter-evans/repository-dispatch@v4
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.REPO_ENGINE_PAT }}
           repository: TheBossBaby/project-v-engine
