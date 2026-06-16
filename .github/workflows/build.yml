@@ -19,6 +19,13 @@ jobs:
       - name: Build
         run: cmake --build build --config Debug
 
+      - name: Token Validatin
+        run:
+            if [ -z "${{ secrets.REPO_ENGINE_PAT }}" ]; then
+              echo "token missing"
+              exit 1
+            fi
+            
       - name: Dispatch to engine
         uses: peter-evans/repository-dispatch@v4
         with:
