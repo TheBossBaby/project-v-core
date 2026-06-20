@@ -1,6 +1,6 @@
 #pragma once
 
-#include "projectv/core/shader.hpp"
+#include "projectV/core/shader.hpp"
 
 #include <optional>
 #include <string>
