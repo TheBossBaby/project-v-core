@@ -4,8 +4,8 @@
 #include <string_view>
 #include <vector>
 
-#include <core/renderView.hpp>
-#include <core/renderable.hpp>
+#include <projectV/core/renderView.hpp>
+#include <projectV/core/renderable.hpp>
 
 namespace projectv::core
 {

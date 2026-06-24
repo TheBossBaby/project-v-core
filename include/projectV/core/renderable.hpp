@@ -1,7 +1,7 @@
 #pragma once
 
-#include <core/math/math.hpp>
-#include <core/meshHandle.hpp>
+#include <projectV/core/math/math.hpp>
+#include <projectV/core/meshHandle.hpp>
 
 namespace projectv::core
 {
