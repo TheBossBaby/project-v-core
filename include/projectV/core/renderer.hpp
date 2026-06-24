@@ -2,6 +2,10 @@
 
 #include <cstdint>
 #include <string_view>
+#include <vector>
+
+#include <core/renderView.hpp>
+#include <core/renderable.hpp>
 
 namespace projectv::core
 {
@@ -67,8 +71,10 @@ namespace projectv::core
          * Implementations typically acquire the next render target and
          * prepare command recording.
          */
-        virtual void beginFrame() = 0;
+        virtual void beginFrame(const RenderView& renderView) = 0;
 
+        
+        virtual void draw(const std::vector<Renderable>& items) = 0;
         /**
          * @brief Ends rendering a frame.
          *

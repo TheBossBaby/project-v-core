@@ -22,6 +22,9 @@ target_sources(engine_core
         include/projectV/core/logger.hpp
 
         include/projectV/core/renderer.hpp
+        include/projectV/core/renderView.hpp
+        include/projectV/core/renderable.hpp
+
         include/projectV/core/raytracer.hpp
 
         include/projectV/core/mesh.hpp
