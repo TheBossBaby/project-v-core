@@ -86,5 +86,13 @@ namespace projectv::core
          * @return Window height in pixels.
          */
         virtual uint32_t getHeight() const = 0;
+
+        /**
+         * Returns the underlying platform window.
+         *
+         * This function exists solely for platform-specific
+         * integrations such as Vulkan surface creation.
+         */
+        virtual void* nativeHandle() const noexcept = 0;
     };
 }
