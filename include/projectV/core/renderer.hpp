@@ -6,6 +6,7 @@
 
 #include <projectV/core/renderView.hpp>
 #include <projectV/core/renderable.hpp>
+#include <projectV/core/window.hpp>
 
 namespace projectv::core
 {
@@ -55,7 +56,7 @@ namespace projectv::core
          * @param config Configuration parameters used to initialize the renderer.
          * @return true if initialization succeeded; otherwise false.
          */
-        virtual bool init(const RendererConfig& config) = 0;
+        virtual bool init(const RendererConfig& config, core::IWindow& inWindow) = 0;
 
         /**
          * @brief Resizes the render target.
