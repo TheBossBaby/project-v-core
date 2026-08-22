@@ -4,6 +4,8 @@
 #include <string_view>
 #include <vector>
 
+#include <projectV/core/graphicsPipelineDescription.hpp>
+#include <projectV/core/graphicsPipelineHandle.hpp>
 #include <projectV/core/renderView.hpp>
 #include <projectV/core/renderable.hpp>
 #include <projectV/core/window.hpp>
@@ -76,6 +78,22 @@ namespace projectv::core
 
         
         virtual void draw(const std::vector<Renderable>& items) = 0;
+
+        /**
+         * @brief Creates a graphics pipeline from a shader-level description.
+         *
+         * Implementations resolve the shader handles referenced by
+         * @p description (for example through the engine's ShaderManager)
+         * and build whatever backend-specific pipeline object corresponds
+         * to them, keeping ownership of it internally.
+         *
+         * @param description Shader stages the pipeline is built from.
+         * @return A handle identifying the created pipeline, or an invalid
+         *         handle if creation failed (for example if a referenced
+         *         shader handle could not be resolved).
+         */
+        virtual GraphicsPipelineHandle createGraphicsPipeline(const GraphicsPipelineDescription& description) = 0;
+
         /**
          * @brief Ends rendering a frame.
          *
