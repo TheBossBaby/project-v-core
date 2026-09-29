@@ -19,6 +19,7 @@ add_library(engine_core STATIC)
 # Add sources
 target_sources(engine_core
     PUBLIC
+        include/projectV/core/config.hpp
         include/projectV/core/logger.hpp
 
         include/projectV/core/renderer.hpp
@@ -35,6 +36,8 @@ target_sources(engine_core
         include/projectV/core/shader.hpp
         include/projectV/core/shaderLoader.hpp
         include/projectV/core/shaderHandle.hpp
+        include/projectV/core/graphicsPipelineDescription.hpp
+        include/projectV/core/graphicsPipelineHandle.hpp
 
         include/projectV/core/window.hpp
         include/projectV/core/application.hpp
