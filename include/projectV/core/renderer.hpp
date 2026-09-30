@@ -76,21 +76,28 @@ namespace projectv::core
          */
         virtual void beginFrame(const RenderView& renderView) = 0;
 
-        
+        /**
+         * @brief Records draw commands for the given items in the current frame.
+         *
+         * Must be called between beginFrame() and endFrame(). Items must
+         * reference pipelines created earlier via createGraphicsPipeline().
+         *
+         * @param items Renderables to draw.
+         */
         virtual void draw(const std::vector<Renderable>& items) = 0;
 
         /**
          * @brief Creates a graphics pipeline from a shader-level description.
          *
-         * Implementations resolve the shader handles referenced by
-         * @p description (for example through the engine's ShaderManager)
-         * and build whatever backend-specific pipeline object corresponds
-         * to them, keeping ownership of it internally.
+         * Implementations build whatever backend-specific pipeline object
+         * corresponds to the shader code in @p description, keeping
+         * ownership of it internally. The shader bytes are only borrowed for
+         * the duration of this call and must not be retained.
          *
          * @param description Shader stages the pipeline is built from.
          * @return A handle identifying the created pipeline, or an invalid
-         *         handle if creation failed (for example if a referenced
-         *         shader handle could not be resolved).
+         *         handle if creation failed (for example if the shader code
+         *         could not be compiled into a backend shader module).
          */
         virtual GraphicsPipelineHandle createGraphicsPipeline(const GraphicsPipelineDescription& description) = 0;
 
