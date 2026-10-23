@@ -45,6 +45,8 @@ target_sources(engine_core
         include/projectV/core/transform.hpp
 
         include/projectV/core/math/math.hpp
+
+        include/projectV/core/gpu/gpuMeshHandle.hpp
     PRIVATE
         src/core/core.cpp
 )

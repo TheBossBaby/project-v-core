@@ -1,7 +1,7 @@
 #pragma once
 
 #include <projectV/core/math/math.hpp>
-#include <projectV/core/meshHandle.hpp>
+#include <projectV/core/gpu/gpuMeshHandle.hpp>
 #include <projectV/core/graphicsPipelineHandle.hpp>
 
 namespace projectv::core
@@ -11,9 +11,9 @@ namespace projectv::core
      */
     struct Renderable {
         /**
-         * @brief Mesh to draw.
+         * @brief GPU Mesh to draw.
          */
-        MeshHandle             mesh;
+        gpu::GpuMeshHandle gpuMesh;
 
         /**
          * @brief Pipeline to draw with, as returned by IRenderer::createGraphicsPipeline().

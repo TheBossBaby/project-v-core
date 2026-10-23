@@ -10,6 +10,8 @@
 #include <projectV/core/renderable.hpp>
 #include <projectV/core/window.hpp>
 
+#include <projectV/core/gpu/gpuMeshHandle.hpp>
+
 namespace projectv::core
 {
     /**
@@ -85,6 +87,17 @@ namespace projectv::core
          * @param items Renderables to draw.
          */
         virtual void draw(const std::vector<Renderable>& items) = 0;
+
+        /**
+         * @brief Uploads a CPU-side mesh to GPU memory.
+         *
+         * The renderer keeps ownership of the GPU resources. The returned
+         * handle can be placed in a Renderable and passed to draw().
+         *
+         * @param mesh Mesh whose vertices and indices are uploaded.
+         * @return A handle identifying the uploaded mesh.
+         */
+        virtual gpu::GpuMeshHandle uploadMesh(const struct Mesh& mesh) = 0;
 
         /**
          * @brief Creates a graphics pipeline from a shader-level description.
