@@ -26,6 +26,11 @@ namespace projectv::core
         R16G16B16A16_Float,
 
         /**
+         * @brief 32-bit floating-point RGBA format.
+         */
+        R32G32B32A32_Float,
+
+        /**
          * @brief 24-bit depth and 8-bit stencil format.
          */
         D24S8,
@@ -114,7 +119,8 @@ namespace projectv::core
          * Rows are tightly packed (no padding) and laid out top to bottom,
          * unless the texture was flipped vertically while loading. The pixel
          * layout follows desc.format, so the size is
-         * desc.width * desc.height * bytes per pixel.
+         * desc.width * desc.height * bytes per pixel. Floating-point
+         * channels are stored in the platform's native byte order.
          */
         std::vector<std::uint8_t> data;
     };
