@@ -1,7 +1,7 @@
 #pragma once
 
-#include <string_view>
 #include <optional>
+#include <string>
 
 #include "projectV/core/texture.hpp"
 
@@ -15,7 +15,7 @@ namespace projectv::core
         /**
          * @brief Path to the texture asset.
          */
-        std::string_view path;
+        std::string path;
 
         /**
          * @brief Indicates whether the texture should be vertically flipped during loading.

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <vector>
 
 namespace projectv::core
 {
@@ -106,5 +107,15 @@ namespace projectv::core
          * @brief Texture description.
          */
         TextureDesc desc{};
+
+        /**
+         * @brief Raw pixel data.
+         *
+         * Rows are tightly packed (no padding) and laid out top to bottom,
+         * unless the texture was flipped vertically while loading. The pixel
+         * layout follows desc.format, so the size is
+         * desc.width * desc.height * bytes per pixel.
+         */
+        std::vector<std::uint8_t> data;
     };
 }
