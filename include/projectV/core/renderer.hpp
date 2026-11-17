@@ -11,6 +11,7 @@
 #include <projectV/core/window.hpp>
 
 #include <projectV/core/gpu/gpuMeshHandle.hpp>
+#include <projectV/core/gpu/gpuTextureHandle.hpp>
 
 namespace projectv::core
 {
@@ -98,6 +99,8 @@ namespace projectv::core
          * @return A handle identifying the uploaded mesh.
          */
         virtual gpu::GpuMeshHandle uploadMesh(const struct Mesh& mesh) = 0;
+
+        virtual gpu::GpuTextureHandle uploadTexture(const struct Texture& mesh) = 0;
 
         /**
          * @brief Creates a graphics pipeline from a shader-level description.
