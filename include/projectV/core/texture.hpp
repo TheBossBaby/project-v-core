@@ -5,6 +5,15 @@
 
 namespace projectv::core
 {
+    enum class TextureType
+    {
+        Texture2D = 0,
+
+        CubeMap,
+
+        MAX
+    };
+
     /**
      * @brief Supported texture formats.
      */
@@ -87,6 +96,10 @@ namespace projectv::core
          */
         std::uint32_t height = 0;
 
+        std::uint32_t mipLevels = 1;
+
+        std::uint32_t layers = 1;        
+
         /**
          * @brief Texture pixel format.
          */
@@ -96,6 +109,8 @@ namespace projectv::core
          * @brief Intended usage of the texture.
          */
         TextureUsage usage = TextureUsage::Sampled;
+
+        TextureType type = TextureType::Texture2D;
     };
 
     /**

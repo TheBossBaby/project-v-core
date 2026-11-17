@@ -50,6 +50,7 @@ target_sources(engine_core
         include/projectV/core/math/math.hpp
 
         include/projectV/core/gpu/gpuMeshHandle.hpp
+        include/projectV/core/gpu/gpuTextureHandle.hpp
     PRIVATE
         src/core/core.cpp
 )
